@@ -237,6 +237,6 @@ Dashboard ini mengakses data *threat intelligence* secara langsung dari API piha
 
 **⭐ Jika proyek ini bermanfaat, berikan star di GitHub!**
 
-Dibuat dengan ❤️ oleh [Muh Syahrir Hamdani](https://github.com/arill2) · Indonesia 🇮🇩
+Dibuat oleh [Muh Syahrir Hamdani](https://github.com/arill2) · Indonesia 🇮🇩
 
 </div>
