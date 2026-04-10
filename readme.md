@@ -1,101 +1,189 @@
-# Indonesian Cyber Threat Intelligence Dashboard 🛡️
+�
 
-Sebuah interaktif *dashboard* real-time yang dirancang untuk mengumpulkan dan memonitor ancaman keamanan siber. Didesain secara khusus untuk kebutuhan *Security Operations Centers (SOC)* dan praktisi pertahanan siber, web aplikasi ini menarik data kerentanan langsung dari API NIST NVD secara *live*, memindai *Domain/IP/Hash* menggunakan batas kekuatan VirusTotal, serta memanfaatkan kecerdasan buatan canggih (Groq Llama-3.1) untuk menelaah dan merangkum setiap ancaman tersebut dalam Bahasa Indonesia.
+�
+￼
+🛡️ Indonesian Cyber Threat Intelligence Dashboard
+Platform pemantau ancaman siber real-time berbasis AI untuk ekosistem digital Indonesia
+�
+�
+�
+�
+�
+�
+Muat gambar
+Muat gambar
+Muat gambar
+Muat gambar
+Muat gambar
+Muat gambar
+Dikembangkan oleh Muh Syahrir Hamdani © 2026
+Proyek portofolio kompetitif — dirancang untuk AILeap, GEMASTIK, dan hackathon keamanan siber nasional.
+�
 
-![Built with React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Built with Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-
-> **Dikembangkan oleh:** Muh Syahrir Hamdani &copy; 2026.  
-> Dirumuskan sebagai proyek portofolio kompetitif untuk berlaga di ajang AILeap, GEMASTIK, dan berbagai kompetisi hackathon ternama.
-
----
-
-## 🌟 Fitur Utama
-
-1. **Live CVE Threat Feed (Lini Masa Ancaman)**
-   - Tersinkronisasi secara otomatis dengan *National Vulnerability Database (NVD)* untuk menarik 50-100 publikasi kerentanan keamanan siber (CVE) paling baru.
-   - Pengekstrak Universal metrik CVSS level Severity secara cerdas yang mendukung V3.1, V3.0, maupun V2.0.
-   - Visualisasi distribusi global melalui grafik donat dan panel statistik.
-
-2. **Universal Threat Scanner (Alat Pindai Taktis)**
-   - Bar pencarian terpadu yang menelusuri rekam jejak digital suatu entri jaringan. Masukkan **Alamat IP**, **Domain**, ataupun **File Hash** (MD5/SHA256).
-   - Menghasilkan luaran Skoring Risiko visual (*Clean, Suspicious, Malicious*) yang terintegrasi secara fundamental bersama ekosistem VirusTotal.
-   
-3. **Integrasi Analis AI Groq**
-   - Mengimplementasikan model bahasa **Llama-3.1-8b** bersutradara mesin Groq untuk menyajikan ringkasan solusi yang presisi.
-   - AI ini bekerja otomatis membongkar dan menerjemahkan jargon teknis rumit ke dalam format mitigasi berdampak, khusus dituliskan dengan bahasa penutur lokal Indonesia.
-   
-4. **Database Historis & Pencarian Arsip**
-   - Penjelajahan repositori arsip tua NVD berbasis kata kunci spesifik *(keywords)* yang dipadupadankan saringan *severity*.
-   - Halaman detail yang mendalam per entri kerentanan (`/cve/:id`) berisikan rincian sumber vendor, tautan referensi, hingga paparan *vector breakdown* metrik CVSS lengkap.
-
-5. **Sistem Keamanan Sisi-Klien (*Client-Side Security*)**
-   - API Keys sangat disembunyikan menggunakan pelestarian ke *Browser Local Storage* perangkat masing-masing pengguna.
-   - Alur transportasi rahasia disalurkan melewati perantara proksi *Next/Vercel Serverless* yang dirancang tahan-*intercept*. Terjamin tidak ada kebocoran header lewat sistem *Payload bridging*.
-   - Tracker Global Hit harian otomatis memperbarui level bar demi memandu pemakaian yang tidak melewati wates limit *free-tier*.
-
----
-
-## 🛠️ Teknologi yang Digunakan (Tech Stack)
-
-- **Frontend Core:** React.js 18 + Vite
-- **Styling & UI:** TailwindCSS, Lucide-React Icons
-- **Visualisasi Data:** Recharts
-- **Aturan Rute (Routing):** React Router v6
-- **Serverless Backend:** Node.js Vercel Functions (`/api/*`)
-- **HTTP Client:** Axios
-- **Penyedia Eskternal:** NIST NVD API, VirusTotal API v3, Groq API
-
----
-
-## 🚀 Panduan Memulai (Development Lokal)
-
-### Persyaratan Awal
-
-Pastikan Anda telah menginstal [Node.js](https://nodejs.org/) berdampingan dengan package manager `npm` pada komputer Anda. 
-
-### 1. Kloning & Mengunduh
-```bash
-git clone https://github.com/your-username/cyber-threat-dashboard.git
-cd cyber-threat-dashboard
+📋 Daftar Isi
+Tentang Proyek
+Fitur Utama
+Demo & Screenshot
+Tech Stack
+Arsitektur Sistem
+Cara Menjalankan Lokal
+Deployment ke Vercel
+Struktur Folder
+Roadmap
+Disclaimer
+🔍 Tentang Proyek
+ICTID adalah platform threat intelligence open-source pertama yang dirancang khusus untuk ekosistem digital Indonesia. Berbeda dari tool sejenis yang berbahasa Inggris dan berbayar, ICTID menyajikan analisis ancaman siber secara real-time, gratis, dan dalam Bahasa Indonesia — cocok untuk:
+🏛️ Tim IT Pemerintah yang memantau infrastruktur .go.id / .id
+🔬 Security Researcher dan Bug Hunter lokal
+🎓 Pelajar dan praktisi keamanan siber Indonesia
+🏢 SOC Analyst yang butuh tool ringan tanpa lisensi mahal
+Mengapa ICTID?
+Fitur
+ICTID
+Tool Komersial
+Bahasa Indonesia
+✅
+❌
+Gratis / Open Source
+✅
+❌
+Fokus infrastruktur .id
+✅
+❌
+AI Analysis real-time
+✅
+Terbatas
+Deploy mandiri
+✅
+❌
+✨ Fitur Utama
+1. 📊 Live CVE Threat Feed
+Sinkronisasi otomatis dengan NIST National Vulnerability Database (NVD) — menampilkan 50–100 CVE terbaru setiap hari
+Ekstraktor CVSS Score universal yang mendukung V3.1, V3.0, dan V2.0
+Visualisasi distribusi severity melalui grafik donat dan panel statistik interaktif
+Filter berdasarkan tingkat keparahan: Critical, High, Medium, Low
+2. 🔍 Universal Threat Scanner
+Satu input bar untuk memindai IP Address, Domain/URL, maupun File Hash (MD5/SHA256)
+Hasil scoring risiko visual: CLEAN 🟢 / SUSPICIOUS 🟡 / MALICIOUS 🔴
+Data ISP, geolokasi negara, dan reputasi jaringan langsung dari ekosistem VirusTotal
+API usage tracker harian agar tidak melewati batas free-tier
+3. 🤖 AI Analysis via Groq
+Menggunakan model Llama-3.1-8b di atas mesin inferensi Groq (LPU) — respons sub-detik
+Secara otomatis menerjemahkan jargon teknis CVE dan threat data ke ringkasan mitigasi Bahasa Indonesia
+Analisis kontekstual yang menyesuaikan output berdasarkan tipe ancaman (CVE vs IP vs Hash)
+4. 🗄️ Database & Pencarian Arsip
+Penelusuran arsip NVD historis berbasis keyword dan filter severity
+Halaman detail per CVE (/cve/:id) dengan breakdown lengkap: CVSS vector, referensi vendor, dan deskripsi teknis
+5. 🔒 Keamanan Sisi Klien
+API Keys disimpan di Browser Local Storage perangkat masing-masing pengguna — tidak pernah dikirim ke server pihak ketiga
+Seluruh request ke API eksternal diproksikan melalui Vercel Serverless Functions (/api/*) untuk mencegah kebocoran header
+Tracker hit harian otomatis memperbarui progress bar pemakaian
+🖼️ Demo & Screenshot
+🔗 Live Demo
+👉 https://indonesian-cyber-threat-intelligenc.vercel.app/
+Universal Threat Scanner
+Scan IP 8.8.8.8 (Google DNS) — terdeteksi CLEAN dengan reputasi tinggi, ISP Google LLC, lokasi US.
+Sidebar Navigasi
+Navigasi 5 halaman: Dashboard · Threat Feed · Scanner · Database · Settings — dengan live API usage tracker di bagian bawah.
+Screenshot lengkap dapat dilihat langsung di Live Demo
+🛠️ Tech Stack
+Layer
+Teknologi
+Frontend Core
+React.js 18 + Vite
+Styling & UI
+TailwindCSS + Lucide React Icons
+Visualisasi Data
+Recharts
+Routing
+React Router v6
+Serverless Backend
+Node.js Vercel Functions (/api/*)
+HTTP Client
+Axios
+CVE Data
+NIST NVD API v2.0
+Threat Reputation
+VirusTotal API v3
+AI Analysis
+Groq API (Llama-3.1-8b)
+Deployment
+Vercel
+🏗️ Arsitektur Sistem
+┌─────────────────────────────────────────────┐
+│              ICTID Frontend (React)          │
+│  Dashboard │ Threat Feed │ Scanner │ DB      │
+└────────────────────┬────────────────────────┘
+                     │ HTTP Request
+┌────────────────────▼────────────────────────┐
+│         Vercel Serverless Functions          │
+│   /api/nvd   /api/virustotal   /api/groq     │
+└──────┬──────────────┬──────────────┬────────┘
+       │              │              │
+┌──────▼──────┐ ┌─────▼──────┐ ┌───▼────────┐
+│  NIST NVD   │ │ VirusTotal │ │  Groq LPU  │
+│  CVE Data   │ │ Reputation │ │ Llama-3.1  │
+└─────────────┘ └────────────┘ └────────────┘
+🚀 Cara Menjalankan Lokal
+Prasyarat
+Pastikan sudah terinstall: Node.js v18+ dan npm
+1. Clone Repositori
+git clone https://github.com/arill2/Indonesian-Cyber-Threat-Intelligence-Dashboard.git
+cd Indonesian-Cyber-Threat-Intelligence-Dashboard
 npm install
-```
-
-### 2. Mengkonfigurasi Rahasia Environment (Opsional)
-Untuk menjalankan sisi server Vercel di komputer secara lokal yang sukses, buatlah salinan ke file bernama `.env` mengadopsi kerangka dari `.env.example`:
-
-```env
-VT_API_KEY=kunci_virustotal_anda
-GROQ_API_KEY=kunci_groq_anda
-NVD_API_KEY=kunci_nvd_anda
-```
-*Catatan: Jika dikosongkan, pengunjung atau Anda sendiri secara dinamis dapat mem-pasted Key milik masing-masing secara langsung melalui panel **Settings** di halaman web saat telah berjalan.*
-
-### 3. Menyalakan Server Development
-Dikarenakan arsitektur ini memeluk *Vercel Serverless Functions* (`/api`), sangat direkomendasikan menjalankan *build* ini melewati CLI Vercel agar lingkungan perantara sinkron berjalan sebagaimana mestinya.
-
-```bash
+2. Konfigurasi Environment Variables
+Buat file .env di root project:
+VT_API_KEY=your_virustotal_api_key
+GROQ_API_KEY=your_groq_api_key
+NVD_API_KEY=your_nvd_api_key
+💡 Catatan: Jika tidak ingin mengatur .env, API key juga bisa dimasukkan langsung melalui halaman Settings di dalam aplikasi. Key akan tersimpan aman di Browser Local Storage.
+3. Jalankan dengan Vercel CLI (Direkomendasikan)
 npm install -g vercel
 vercel dev
-```
-Buka aplikasi web ini secara lokal di alamat `http://localhost:3000`.
+Buka di browser: http://localhost:3000
+4. Atau Jalankan dengan Vite (Frontend Only)
+npm run dev
+⚠️ Mode ini tidak menjalankan Serverless Functions. Fitur Scanner dan AI Analysis tidak akan berfungsi tanpa Vercel CLI.
+🌐 Deployment ke Vercel
+Push kode ke repositori GitHub
+Login ke vercel.com → Add New Project → Import repo ini
+Vercel akan otomatis mendeteksi konfigurasi Vite
+Tambahkan Environment Variables di Vercel Settings:
+VT_API_KEY
+GROQ_API_KEY
+NVD_API_KEY
+Klik Deploy 🚀
+📁 Struktur Folder
+├── api/                  # Vercel Serverless Functions (proxy ke API eksternal)
+│   ├── nvd.js
+│   ├── virustotal.js
+│   └── groq.js
+├── public/               # Static assets
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Dashboard, ThreatFeed, Scanner, Database, Settings
+│   ├── hooks/            # Custom React hooks
+│   └── utils/            # Helper functions
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+└── package.json
+🗺️ Roadmap
+[x] Live CVE Threat Feed dari NVD
+[x] Universal Threat Scanner (IP/Domain/Hash)
+[x] AI Analysis dalam Bahasa Indonesia via Groq
+[x] Database pencarian arsip CVE historis
+[x] API Usage Tracker di sidebar
+[ ] Integrasi feed dari BSSN (Badan Siber dan Sandi Negara)
+[ ] Alert notifikasi CVE baru untuk teknologi populer di Indonesia (WordPress, Mikrotik)
+[ ] Export laporan ancaman ke PDF
+[ ] Threat history timeline untuk domain .go.id
+[ ] Support multi-bahasa (EN/ID toggle)
+⚠️ Disclaimer
+Dashboard ini mengakses data threat intelligence secara langsung dari API pihak ketiga. Pastikan API key yang digunakan dikelola dengan tanggung jawab penuh. Setiap penyalahgunaan fasilitas pemindaian ancaman otomatis melanggar Terms of Service NIST dan VirusTotal.
+Dikembangkan sepenuhnya untuk tujuan riset akademik dan defensive security.
+�
 
----
-
-## 🌐 Menerbitkan (*Deployment*) ke Skala Vercel
-
-Arsitektur aplikasi dioptimalkan sepenuhnya untuk dirilis langsung melampaui peladen Vercel secara integratif via GitHub.
-1. Dorong (*Commit & Push*) direktori kode Anda ke repositori *public/private* di GitHub.
-2. Log-in masuk ke [Vercel](https://vercel.com/) dan ketuk tombol **Add New Project**.
-3. Muat atau impor repositori yang dituju tadi. Sistem Vercel akan otomatis menyadari fondasi `Vite`.
-4. Menyuntikkan rahasia *Environment Variables* Anda (*VT_API_KEY*, dll) ke dalam konfigurasi tapak Vercel Settings sebelum melanjutkan.
-5. Klik **Deploy** dan amati hasil akhirnya mengudara!
-
----
-
-## ⚠️ Pernyataan Sangkalan (Disclaimer)
-Panel kontrol dashboard ini benar-benar mencegat lalu-lintas arsip *threat intelligence* data secara langsung dan tajam. Mohon pastikan kepemimpinan *API keys* yang Anda taruh lokal dan diproyeksikan dikelola dalam tanggung jawab penuh. Setiap tindakan eksploitatif yang menyalahgunakan pemindaian ancaman otomatis lewat fasilitas yang terbangun disini merupakan melanggar etika tata layanan dan kebijakan Terms of Service bawaan agen milik NIST dan VirusTotal.
-
-*Dikembangkan absolut demi melengkapi tujuan riset keilmuan pendidikan serta penindakan operasional sekuriti bertahan (*Defensive Security*).*
+⭐ Jika proyek ini bermanfaat, berikan star di GitHub!
+Dibuat dengan ❤️ oleh Muh Syahrir Hamdani · Indonesia 🇮🇩
+�
